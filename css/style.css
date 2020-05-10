@@ -157,42 +157,49 @@ button:focus {
 
 /* Блок с постами+hover */
 .services {
-  display: flex;
-  margin-top: 5.5rem;
+  margin: 6.3rem 0 0 0;
 }
 .services__posts {
-  text-align: left;
+  padding: 0 0 14.6rem 0;
   font-family: "Open Sans_Light";
   font-size: 14px;
   line-height: 24px;
   color: white;
 }
-.services__posts-elements {
-  height: auto;
-}
 .services__posts h3 {
   position: relative;
+  padding: 2.5rem 0 0.5rem 0;
   font-family: "Gobold Regular";
   font-size: 25px;
   text-transform: uppercase;
-  line-height: 3rem;
   z-index: 2;
 }
-.services__posts p {
+.services__posts-elements p {
   position: relative;
-  margin-bottom: 10rem;
-  padding: 1rem 0 5rem 0;
+  padding: 1rem 0 0 0;
   z-index: 2;
 }
-.services__posts a {
+.services__posts-elements {
+  padding: 0 0 0 2rem;
+}
+.services__posts-elements-first {
+  padding: 0 0 0 7rem;
+}
+
+.services__posts p > a {
   position: absolute;
   width: 45px;
   height: 45px;
-  left: 3rem;
-  bottom: 3rem;
+  top: 11rem;
   z-index: 2;
   background: url(../source/images/icons/css_sprites.png);
   background-position: -10px -172px;
+}
+p.center-block-link > a {
+  top: 17rem;
+}
+p.right-block-link > a {
+  top: 20rem;
 }
 .services__posts h3::after {
   content: "";
@@ -272,32 +279,6 @@ button:focus {
   color: #82878a;
   line-height: 24px;
 }
-/* .multiple-items {
-  position: relative;
-} */
-/* .multiple-items .slick-arrow {
-  position: absolute;
-  top: 40%;
-  z-index: 2;
-  font-size: 0;
-  border: none;
-  background: none;
-} */
-/* .multiple-items .slick-arrow.slick-prev,
-.multiple-items .slick-arrow.slick-next {
-  width: 45px;
-  height: 45px;
-} */
-/* .multiple-items .slick-arrow.slick-prev {
-  left: 0;
-  /* background: url("../source/images/icons/arrow_left.png") 0 0 no-repeat; */
-/* background: url("../source/images/icons/css_sprites.png");
-  background-position: 0px -150px;
-} */
-/* .multiple-items .slick-arrow.slick-next {
-  right: 0;
-  background: url("../source/images/icons/arrow_right.png") 0 0 no-repeat;
-} */
 .multiple-items__element {
   text-align: right;
 }
@@ -479,47 +460,6 @@ label[for="checkbox_left"] {
   display: block;
 }
 
-/* Menu # 2 focus */
-/* .list-control {
-  position: relative;
-  max-width: 357px;
-  margin-top: 0.5rem;
-  overflow: hidden;
-  background: url(../source/images/icons/arrow_down.png) 98% no-repeat #161616;
-  border-right: 1px solid #4a4c4c;
-}
-.list {
-  min-width: 370px;
-  max-height: 30px;
-  padding: 0 0 0 0.5rem;
-  font-size: 13px;
-  font-family: "Open Sans_Light";
-  color: #82878a;
-  background: transparent;
-  outline: none;
-  border: 1px solid #4a4c4c;
-  border-radius: 0;
-}
-.list:focus {
-  background-color: transparent;
-  background: transparent;
-  color: #82878a;
-  outline: none;
-  box-shadow: none;
-  border-color: #4a4c4c;
-}
-.list:focus option {
-  outline: none;
-  box-shadow: none;
-  border-color: #9e171d;
-}
-.list option {
-  font-size: 13px;
-  font-family: "Open Sans_Light";
-  color: #82878a;
-  text-transform:capitalize;
-} */
-
 /* Registration fields */
 .registration {
   display: inline-block;
@@ -573,7 +513,7 @@ label[for="details"] {
 button#submit {
   position: relative;
   max-width: 170px;
-  min-height: 45px; /*обойти статичную высоту */
+  min-height: 45px;
   margin: 0.3rem 0 3.4rem 0;
   padding: 0.8rem;
   text-align: center;
@@ -696,20 +636,27 @@ button span {
 .swiper-next {
   width: 45px;
   height: 45px;
-}
-.swiper-prev,
-.swiper-next {
   background: url(../source/images/icons/css_sprites.png);
 }
 .swiper-prev {
   background-position: -140px -172px;
 }
+.swiper-next {
+  background-position: -205px -172px;
+}
 .swiper-prev:focus,
 .swiper-next:focus {
   outline: none;
 }
-.swiper-next {
-  background-position: -205px -172px;
+.swiper-prev:hover {
+  box-shadow: -1px 0px rgb(158, 23, 29), -1px 1px rgb(158, 23, 29),
+    -2px 1px rgb(157, 22, 28), -2px 2px rgb(157, 22, 28),
+    -3px 2px rgb(156, 21, 27), -3px 3px rgb(156, 21, 27);
+}
+.swiper-next:hover {
+  box-shadow: 1px 0px rgb(158, 23, 29), 1px 1px rgb(158, 23, 29),
+    2px 1px rgb(157, 22, 28), 2px 2px rgb(157, 22, 28), 3px 2px rgb(156, 21, 27),
+    3px 3px rgb(156, 21, 27);
 }
 
 /* Bottom block */
@@ -778,13 +725,17 @@ button span {
 /* Footer */
 .footer {
   background: #e6e6e6;
-  padding: 0.7rem 0 0.7rem 0;
+  padding: 0.7rem 0 0.5rem 0;
+  margin: 0;
 }
-.footer-menu {
+.footer-menu,
+.footer-menu-right {
   display: flex;
-  padding: 0;
   margin: 0;
   list-style: none;
+}
+.footer-menu-right {
+  padding: 0;
 }
 .footer-menu li > a {
   padding: 0 1rem 0 0;
@@ -795,10 +746,63 @@ button span {
   text-decoration: none;
   text-transform: capitalized;
 }
-
 .footer-menu li:nth-child(2) > a {
   color: #9e171d;
 }
+.footer-menu-right > p {
+  padding: 0 1.5rem 0 1rem;
+  margin-bottom: 0;
+  font-family: "Open Sans_Light";
+  font-size: 13px;
+  line-height: 24px;
+  color: #82878a;
+}
+.footer-menu-right ul {
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+}
+.footer-menu-right > ul li {
+  position: relative;
+  min-width: 29px;
+  min-height: 30px;
+  margin: 0 0.5rem 0 0;
+}
+.footer-menu-right > ul li a {
+  min-width: 29px;
+  min-height: 30px;
+}
+.footer-menu-right > ul li a::after {
+  content: "";
+  position: absolute;
+  width: 29px;
+  height: 30px;
+  top: 0;
+  left: 0;
+}
+.footer-menu-right > ul li:nth-child(1) a::after {
+  background: url(../source/images/icons/css_sprites.png);
+  background-position: -270px -172px;
+}
+.footer-menu-right > ul li:nth-child(1):hover a::after {
+  background-position: -108px -237px;
+}
+
+.footer-menu-right > ul li:nth-child(2) a::after {
+  background: url(../source/images/icons/css_sprites.png);
+  background-position: -60px -237px;
+}
+.footer-menu-right > ul li:nth-child(2):hover a::after {
+  background-position: -207px -237px;
+}
+.footer-menu-right > ul li:nth-child(3) a::after {
+  background: url(../source/images/icons/css_sprites.png);
+  background-position: -10px -237px;
+}
+.footer-menu-right > ul li:nth-child(3):hover a::after {
+  background-position: -157px -237px;
+}
+
 /* Media */
 @media (min-width: 768px) and (max-width: 992px) {
 }
