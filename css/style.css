@@ -57,22 +57,63 @@ body {
 }
 .button-menu {
   border: none;
-  font-size: 1.5rem;
+  max-width: 40px;
 }
 button:focus {
   outline: none;
 }
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.main-menu {
+  width: 100%;
+  padding-right: 0;
 }
-.bottom-main-menu > li > a {
+.bottom-main-menu {
+  text-align: right;
+}
+/* button.button-menu::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30%;
+  left: 98%;
+  background: url(../source/images/icons/burger.png) no-repeat;
+}  */
+.navbar-toggler {
+  padding: 0;
+}
+.custom-toggler .navbar-toggler-icon {
+  min-width: 40px;
+  font-size: 1rem;
+  line-height: 0;
+  background: url(../source/images/icons/burger.png) no-repeat;
+}
+.navbar-collapse {
+  background: #9e171d;
+}
+.navbar-dark .navbar-nav .nav-item .nav-link {
+  position: relative;
+  padding: 0;
   font-family: "Open Sans_Light";
   font-size: 13px;
-  line-height: 24px;
-  color: #ffffff;
+  line-height: 20px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-.navbar-dark .navbar-nav .nav-link {
-  color: #ffffff;
+.navbar-dark .navbar-nav .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  line-height: 15px;
+  background-color: white;
+  transition: width 0.3s ease-out;
+}
+.navbar-dark .navbar-nav .nav-item .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-item .nav-link:focus::after {
+  width: 100%;
 }
 
 /* Слайдер */
@@ -280,6 +321,7 @@ p.right-block-link > a {
   line-height: 24px;
 }
 .multiple-items__element {
+  position: relative;
   text-align: right;
 }
 div.multiple-items__element > p {
@@ -289,6 +331,25 @@ div.multiple-items__element > p {
   font-size: 25px;
   color: #000000;
   text-transform: uppercase;
+}
+.hover-comment {
+  display: none;
+  padding: 0.5rem 0 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  width: 100%;
+  height: 26%;
+  list-style: none;
+  text-align: center;
+  font-family: "Open Sans_Light";
+  font-size: 13px;
+  color: white;
+  background: rgba(158, 23, 30, 0.85);
+}
+
+.slick-slide:hover .hover-comment {
+  display: block;
 }
 div.multiple-items__element > .audi {
   padding-top: 1.3rem;
@@ -415,7 +476,7 @@ label[for="checkbox_left"] {
 /* List vehical */
 
 /* Menu # 1 hover */
-.menu {
+/* .menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -458,6 +519,45 @@ label[for="checkbox_left"] {
 }
 .menu .menu-item:hover .submenu {
   display: block;
+} */
+
+/* Menu # 2 focus */
+.list-control {
+  max-width: 370px;
+  margin-top: 0.5rem;
+  background: url(../source/images/icons/arrow_down.png) 98% no-repeat;
+}
+.list {
+  max-width: 370px;
+  max-height: 30px;
+  padding: 0 0 0 0.5rem;
+  font-size: 13px;
+  font-family: "Open Sans_Light";
+  color: #82878a;
+  background: transparent;
+  outline: none;
+  border: 1px solid #4a4c4c;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.list:focus {
+  background: transparent;
+  color: #82878a;
+  outline: none;
+  box-shadow: 0 0 5px rgba(158, 23, 30, 0.8) inset;
+  border-color: #9e171d;
+}
+.list:focus option {
+  outline: none;
+  box-shadow: none;
+}
+.list option {
+  font-size: 13px;
+  font-family: "Open Sans_Light";
+  color: #82878a;
+  text-transform: capitalize;
 }
 
 /* Registration fields */
@@ -487,19 +587,20 @@ input[type="email"]:focus {
   outline: none;
   box-shadow: none;
   border: 1px solid #9e171d;
+  box-shadow: 0 0 5px rgba(158, 23, 30, 0.8) inset;
 }
 
 /* Textarea */
 #details {
-  border-radius: 0;
-  border: none;
   max-width: 670px;
   resize: none;
+  border-radius: 0;
+  border: none;
 }
 #details:focus {
   outline: none;
-  box-shadow: none;
   border: 1px solid #9e171d;
+  box-shadow: 0 0 5px rgba(158, 23, 30, 0.8) inset;
 }
 label[for="details"] {
   margin-top: 1rem;
