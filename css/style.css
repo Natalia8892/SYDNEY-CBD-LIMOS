@@ -97,7 +97,7 @@ button:focus {
   height: 24px;
 }
 .hamburger-inner {
-  top: 50%;
+  top: 9%;
 }
 .hamburger-inner::after,
 .hamburger-inner::before {
@@ -301,7 +301,7 @@ p.right-block-link > a {
 .services__posts:first-child:hover::before,
 .services__posts:nth-child(2):hover::before,
 .services__posts:nth-child(3):hover::before {
-  background-color: #9e171d;
+  background: #9e171d;
   opacity: 0.8;
 }
 .services__posts:nth-child(2) {
@@ -324,7 +324,7 @@ p.right-block-link > a {
   z-index: 1;
 }
 
-/* Карусель 3-slide */
+/* Carouse 3-slide */
 #fleet {
   position: relative;
   background: white;
@@ -354,16 +354,15 @@ p.right-block-link > a {
   padding-bottom: 3rem;
   font-family: "Open Sans_Light";
   font-size: calc(11px + 2 * (100vw / 1499));
-  color: #82878a;
   line-height: 24px;
+  color: #82878a;
 }
 .multiple-items__element {
   position: relative;
   text-align: center;
 }
 div.multiple-items__element > p {
-  padding-bottom: 3rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0 3rem 0;
   text-align: center;
   font-family: "Gobold Regular";
   font-size: calc(18px + 7 * (100vw / 1499));
@@ -372,25 +371,24 @@ div.multiple-items__element > p {
 }
 .hover-comment {
   display: none;
-  padding: 0.5rem 0 0 0;
   position: absolute;
-  left: 0;
-  bottom: 30%;
   width: 100%;
   height: 26%;
-  list-style: none;
+  left: 0;
+  bottom: 30%;
+  padding: 0.5rem 0 0 0;
   text-align: center;
   font-family: "Open Sans_Light";
-  /* font-size: 13px; */
   font-size: calc(10px + 3 * (100vw / 1499));
   color: white;
+  list-style: none;
   background: rgba(158, 23, 30, 0.85);
 }
 .slick-dots {
   display: flex;
-  justify-content: center;
   margin: 0;
   padding: 1rem 0 3rem 0;
+  justify-content: center;
   list-style-type: none;
 }
 .slick-dots > li {
@@ -401,9 +399,9 @@ div.multiple-items__element > p {
   width: 0.7rem;
   height: 0.7rem;
   padding: 0;
+  font-size: 0;
   border: 1px solid #999;
   border-radius: 50%;
-  font-size: 0;
   box-shadow: inset 0 1px 1px 0 #777;
 }
 .slick-dots > li.slick-active button {
@@ -452,8 +450,7 @@ div.multiple-items__element > .audi {
   background: #161616;
 }
 .right-block {
-  padding-left: 3.1rem;
-  padding-right: 0;
+  padding: 0 0 0 3.1rem;
 }
 .left-block h2,
 .right-block h2 {
@@ -525,9 +522,9 @@ input[type="checkbox"] + label::before {
 }
 input[type="checkbox"]:checked + label::after {
   content: "";
+  position: absolute;
   width: 24px;
   height: 16px;
-  position: absolute;
   top: -0.1rem;
   right: 0.05rem;
   background: url(../source/images/icons/css_sprites.png);
@@ -636,7 +633,6 @@ label[for="details"] {
 }
 
 /* Submit */
-
 button#submit {
   position: relative;
   min-width: 170px;
@@ -864,9 +860,9 @@ button span {
 
 /* Footer */
 .footer {
-  background: #e6e6e6;
-  padding: 0.7rem 0 0.5rem 0;
   margin: 0;
+  padding: 0.7rem 0 0.5rem 0;
+  background: #e6e6e6;
 }
 .footer-menu,
 .footer-menu-right {
@@ -898,9 +894,9 @@ button span {
   color: #82878a;
 }
 .footer-menu-right ul {
+  display: flex;
   margin-bottom: 0;
   list-style: none;
-  display: flex;
 }
 .footer-menu-right > ul li {
   position: relative;
@@ -946,7 +942,6 @@ button span {
 @media (max-width: 1200px) {
   /* Navbar */
   .main-menu {
-    width: 100%;
     padding: 3rem 2.2rem 3rem 4rem;
   }
   .nav-item:last-child .nav-link {
@@ -1072,6 +1067,10 @@ button span {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  /* Menu */
+  .hamburger-inner {
+    top: 5%;
+  }
   /* Slider with description 1-st */
   .description > p {
     height: 37%;
